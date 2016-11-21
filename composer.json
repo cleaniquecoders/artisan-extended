@@ -1,0 +1,17 @@
+{
+    "name": "cleaniquecoders/artisan-extended",
+    "description": "Laravel Artisan Extended Commands",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nasrul Hazim",
+            "email": "nasrulhazim.m@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "CleaniqueCoders\\": "src/",
+        }
+    },
+}
