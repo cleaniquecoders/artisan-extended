@@ -11,7 +11,7 @@ class Serve extends Command
      *
      * @var string
      */
-    protected $signature = 'clear:serve {port=8000}';
+    protected $signature = 'clear:serve {--port=8000}';
 
     /**
      * The console command description.
@@ -38,6 +38,6 @@ class Serve extends Command
     public function handle()
     {
         $this->call('clear:cache');
-        $this->call('serve', ['port' => $this->argument('port')]);
+        $this->call('serve', ['--port' => $this->option('port')]);
     }
 }
