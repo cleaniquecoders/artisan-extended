@@ -46,6 +46,7 @@ class Common extends Command
                     'name' => $value,
                     '-c' => true,
                     '-m' => true,
+                    '-r' => true,
                 ]
             );
             $this->call('make:route', [
