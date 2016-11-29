@@ -19,6 +19,7 @@ class ArtisanExtendedServiceProvider extends ServiceProvider
                 \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Serve::class,
                 \CleaniqueCoders\ArtisanExtended\Console\Commands\Route::class,
                 \CleaniqueCoders\ArtisanExtended\Console\Commands\Common::class,
+                \CleaniqueCoders\ArtisanExtended\Console\Commands\Secure\Cookie::class,
             ]);
         }
     }
