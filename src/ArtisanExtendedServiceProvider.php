@@ -4,7 +4,7 @@ namespace CleaniqueCoders\ArtisanExtended;
 
 use Illuminate\Support\ServiceProvider;
 
-class ArtisanExtendedProvider extends ServiceProvider
+class ArtisanExtendedServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
