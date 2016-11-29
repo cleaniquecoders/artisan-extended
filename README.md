@@ -10,6 +10,10 @@ composer require cleaniquecoders/artisan-extended
 
 Open up `config/app.php` and register `CleaniqueCoders\ArtisanExtended\ArtisanExtendedServiceProvider::class,` in `providers` key.
 
+## Important Notes
+
+On production, only `php artisan clear:cache` available for use, other than that if your application running on `local` or `staging`, all the Artisan Extended commands available for you on artisan console.
+
 ## Available Commands
 
 ### Clear All Caches
@@ -56,7 +60,7 @@ OR
 php artisan make:common Post Like Video Photo Reaction
 ```
 
-## Secure your Cookies
+### Secure your Cookies
 
 This command only for the new project only, as this command will change the default value of the `cookie` name to random string and set `encrypt` to true. It's recommended to change your application's cookie name and encrypt it.
 
