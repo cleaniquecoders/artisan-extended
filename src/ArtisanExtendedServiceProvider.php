@@ -13,14 +13,28 @@ class ArtisanExtendedServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $commands = [];
+
+        // commands available on console and web app
+        $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Cache::class;
+
+        // register commands only when application is running in console mode
         if ($this->app->runningInConsole()) {
-            $this->commands([
-                \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Cache::class,
-                \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Serve::class,
-                \CleaniqueCoders\ArtisanExtended\Console\Commands\Route::class,
-                \CleaniqueCoders\ArtisanExtended\Console\Commands\Common::class,
-                \CleaniqueCoders\ArtisanExtended\Console\Commands\Secure\Cookie::class,
-            ]);
+
+            // register all commands that can be use during local, staging and production
+            // $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Cache::class;
+
+            // register commands that running on local and staging
+            if ($this->app->environment('local', 'staging')) {
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Cache::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Serve::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Route::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Common::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Secure\Cookie::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Database\Setup::class;
+            }
+
+            $this->commands($commands);
         }
     }
 
