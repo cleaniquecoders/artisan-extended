@@ -1,24 +1,24 @@
 <?php
 
-namespace CleaniqueCoders\Console\Commands\ArtisanExtended\Clear;
+namespace CleaniqueCoders\ArtisanExtended\Console\Commands\Clear;
 
 use Illuminate\Console\Command;
 
-class Serve extends Command
+class Cache extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'clear:serve {--port=8000}';
+    protected $signature = 'clear:cache';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Clear all caches and serve the application';
+    protected $description = 'Clear all caches';
 
     /**
      * Create a new command instance.
@@ -37,7 +37,8 @@ class Serve extends Command
      */
     public function handle()
     {
-        $this->call('clear:cache');
-        $this->call('serve', ['--port' => $this->option('port')]);
+        $this->call('view:clear');
+        $this->call('config:cache');
+        $this->call('optimize');
     }
 }

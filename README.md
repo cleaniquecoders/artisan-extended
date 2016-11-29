@@ -8,7 +8,7 @@ composer require cleaniquecoders/artisan-extended
 
 ## Register Service Provider
 
-Open up `config/app.php` and register `CleaniqueCoders\Providers\ArtisanExtendedProvider::class,` in `providers` key.
+Open up `config/app.php` and register `CleaniqueCoders\ArtisanExtended\ArtisanExtendedServiceProvider::class,` in `providers` key.
 
 ## Available Commands
 
@@ -44,6 +44,23 @@ php artisan make:route RouteName --api
 
 ### Create a new Model, Migration, Resourceful Controller, Route and Request
 
+You may create single or multiple Model at one time.
+
 ```
-php artisan make:common ModelA ModelB ModelC
+php artisan make:common Post
 ```
+
+OR 
+
+```
+php artisan make:common Post Like Video Photo Reaction
+```
+
+## Secure your Cookies
+
+This command only for the new project only, as this command will change the default value of the `cookie` name to random string and set `encrypt` to true. It's recommended to change your application's cookie name and encrypt it.
+
+```
+php artisan secure:cookie
+```
+

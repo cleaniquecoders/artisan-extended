@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\Providers;
+namespace CleaniqueCoders\ArtisanExtended;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -15,10 +15,10 @@ class ArtisanExtendedProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \CleaniqueCoders\Console\Commands\ArtisanExtended\Clear\Cache::class,
-                \CleaniqueCoders\Console\Commands\ArtisanExtended\Clear\Serve::class,
-                \CleaniqueCoders\Console\Commands\ArtisanExtended\Route::class,
-                \CleaniqueCoders\Console\Commands\ArtisanExtended\Common::class,
+                \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Cache::class,
+                \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Serve::class,
+                \CleaniqueCoders\ArtisanExtended\Console\Commands\Route::class,
+                \CleaniqueCoders\ArtisanExtended\Console\Commands\Common::class,
             ]);
         }
     }

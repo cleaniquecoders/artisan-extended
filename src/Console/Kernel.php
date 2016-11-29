@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\Console;
+namespace CleaniqueCoders\ArtisanExtended\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

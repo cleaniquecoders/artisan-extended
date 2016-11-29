@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\Console\Commands\ArtisanExtended;
+namespace CleaniqueCoders\ArtisanExtended\Console\Commands;
 
 use Illuminate\Console\Command;
 
