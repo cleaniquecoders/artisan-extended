@@ -70,9 +70,7 @@ class Setup extends Command
 
         $this->call('clear:cache'); // clear up cache
 
-        $migrateAndSeed = $this->ask('Do you want to run migration scripts and seed the data?', 'yes');
-
-        if ($migrateAndSeed == 'yes') {
+        if ($this->confirm('Do you want to run migration scripts and seed the data?')) {
             $this->call('migrate --seed');
         }
     }
