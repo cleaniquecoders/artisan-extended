@@ -11,7 +11,7 @@ class EventListener extends Command
      *
      * @var string
      */
-    protected $signature = 'make:eventlistener';
+    protected $signature = 'make:eventlistener {name}';
 
     /**
      * The console command description.
