@@ -46,7 +46,13 @@ php artisan make:route RouteName
 php artisan make:route RouteName --api
 ```
 
-### Create a new Model, Migration, Resourceful Controller, Route and Request
+### Create Event & Listener
+
+```
+php artisan make:eventlistener Post
+```
+
+### Create a new Model, Migration, Resourceful Controller, Route, Request, Seeder, Event & Listener
 
 You may create single or multiple Model at one time.
 
