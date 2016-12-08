@@ -55,6 +55,12 @@ class Common extends Command
             $this->call('make:request', [
                 'name' => $value . 'Request',
             ]);
+            $this->call('make:seeder', [
+                'name' => $value . 'TableSeeder',
+            ]);
+            $this->call('make:eventlistener', [
+                'name' => $value,
+            ]);
         }
     }
 }

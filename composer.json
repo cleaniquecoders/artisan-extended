@@ -8,10 +8,13 @@
             "email": "nasrulhazim.m@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/console" : "5.3.*"
+    },
     "autoload": {
         "psr-4": {
             "CleaniqueCoders\\ArtisanExtended\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

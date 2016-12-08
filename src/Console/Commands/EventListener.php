@@ -1,24 +1,24 @@
 <?php
 
-namespace CleaniqueCoders\ArtisanExtended\Console\Commands\Clear;
+namespace CleaniqueCoders\ArtisanExtended\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class Cache extends Command
+class EventListener extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'clear:cache';
+    protected $signature = 'make:eventlistener';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Clear all caches';
+    protected $description = 'Create a new Event and Listener';
 
     /**
      * Create a new command instance.
@@ -37,11 +37,15 @@ class Cache extends Command
      */
     public function handle()
     {
-        $this->call('down');
-        $this->call('clear-compiled');
-        $this->call('view:clear');
-        $this->call('config:cache');
-        $this->call('optimize');
-        $this->call('up');
+        $name = $this->argument('name');
+        $this->call('make:event', [
+            'name' => $name,
+        ]);
+        $this->call('make:listener',
+            [
+                'name' => $name . 'Listener',
+                '-e' => $name . 'Event',
+            ]
+        );
     }
 }
