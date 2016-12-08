@@ -39,7 +39,7 @@ class EventListener extends Command
     {
         $name = $this->argument('name');
         $this->call('make:event', [
-            'name' => $name,
+            'name' => $name . 'Event',
         ]);
         $this->call('make:listener',
             [
