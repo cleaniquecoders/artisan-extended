@@ -28,10 +28,11 @@ class ArtisanExtendedServiceProvider extends ServiceProvider
             if ($this->app->environment('local', 'staging')) {
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Cache::class;
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Clear\Serve::class;
-                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Route::class;
-                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Common::class;
-                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Secure\Cookie::class;
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Database\Setup::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Secure\Cookie::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Common::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\EventListener::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Route::class;
             }
 
             $this->commands($commands);
