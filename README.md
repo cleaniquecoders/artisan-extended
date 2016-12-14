@@ -40,10 +40,28 @@ php artisan clear:serve --port=9000
 php artisan make:route RouteName
 ```
 
-**You can create route for API too**
+Options available:
+
+1. `-a` - Create a new route for API
+2. `-p` - Set prefix for the route
+3. `-m` - Set middleware for the route. Each middleware separated by comma(,)
+
+#### Create an API Route
 
 ```
-php artisan make:route RouteName --api
+php artisan make:route -a Post
+```
+
+#### Create an API Route with Version
+
+```
+php artisan make:route -a -p v1 Post
+```
+
+#### Create an API Route with Version and Middlewares
+
+```
+php artisan make:route -a -p v1 -m auth:auth,jwt Post
 ```
 
 ### Create Event & Listener
