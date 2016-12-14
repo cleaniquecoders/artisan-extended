@@ -15,7 +15,7 @@ class DummyClass
             'prefix' => 'DummyPrefix',
             'middleware' => [DummyMiddleware],
         ], function () {
-            Route::resource('DummyRoute', 'DummyClassController');
+            Route::resource('DummyRoute', 'DummyController');
         });
     }
 }

@@ -50,8 +50,19 @@ class Route extends GeneratorCommand
     {
         parent::fire();
         $name = $this->parseName($this->getNameInput());
+        $path = $this->getNamespace($name) . '\\' . str_replace($this->getNamespace($name) . '\\', '', $name);
 
-        $content = '\\' . $this->getNamespace($name) . '\\' . str_replace($this->getNamespace($name) . '\\', '', $name) . '::routes();' . PHP_EOL;
+        // if controller does not exist
+        if (!$this->files->exists($this->getPath($this->getControllerName($name) . '.php'))) {
+            $this->call('make:controller',
+                [
+                    'name' => $this->getNameInput() . 'Controller',
+                    '-r' => true,
+                ]
+            );
+        }
+
+        $content = '\\' . $path . '::routes();' . PHP_EOL;
 
         file_put_contents(
             base_path('routes/' . ($this->option('a') ? 'api' : 'web') . '.php'),
@@ -74,24 +85,42 @@ class Route extends GeneratorCommand
             'DummyPrefix',
             'DummyMiddleware',
             'DummyRoute',
+            'DummyController',
         ], [
             $this->getClassName($name),
             $this->option('p') ?: '',
             $this->getMiddlewares(),
-            $this->getRouteName(),
+            $this->getRouteName($this->getClassName($name)),
+            $this->getControllerName($name),
         ], $stub);
     }
 
+    /**
+     * Get the class name
+     * @param  string $name
+     * @return string
+     */
     protected function getClassName($name)
     {
         return str_replace($this->getNamespace($name) . '\\', '', $name);
     }
 
-    protected function getRouteName()
+    /**
+     * Get the route name
+     *
+     * @param  string $name
+     * @return [type]
+     */
+    protected function getRouteName($name)
     {
-        return Str::plural(Str::slug($this->argument('name')));
+        return Str::plural(Str::slug($name));
     }
 
+    /**
+     * Get Middlewares
+     *
+     * @return string
+     */
     protected function getMiddlewares()
     {
         if (empty($this->option('m'))) {
@@ -99,6 +128,15 @@ class Route extends GeneratorCommand
         }
 
         return "'" . str_replace(",", "','", $this->option('m')) . "'";
+    }
+
+    /**
+     * @param  string $name
+     * @return [type]
+     */
+    public function getControllerName($name)
+    {
+        return str_replace('Routes', 'Http\Controllers', '\\' . $this->getNamespace($name) . '\\' . $this->getClassName($name) . 'Controller');
     }
 
     /**
