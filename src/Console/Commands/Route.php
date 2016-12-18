@@ -55,11 +55,9 @@ class Route extends GeneratorCommand
         // if controller does not exist
         if ($this->option('r')) {
             if (!$this->files->exists($this->getPath($this->getControllerName($name) . '.php'))) {
-                $this->call('make:controller',
+                $this->call('make:resourceful',
                     [
                         'name' => $this->getNameInput() . 'Controller',
-                        '-r' => true,
-                        '-f' => true,
                     ]
                 );
             }

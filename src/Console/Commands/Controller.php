@@ -2,12 +2,43 @@
 
 namespace CleaniqueCoders\ArtisanExtended\Console\Commands;
 
-use Illuminate\Routing\Console\ControllerMakeCommand;
+use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 
-class Controller extends ControllerMakeCommand
+class Controller extends GeneratorCommand
 {
+    /**
+     * The console command name.
+     *
+     * @var string
+     */
+    protected $name = 'make:resourceful';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Create a new resourceful controller class';
+
+    /**
+     * The type of class being generated.
+     *
+     * @var string
+     */
+    protected $type = 'Resourceful Controller';
+
+    /**
+     * Get the stub file for the generator.
+     *
+     * @return string
+     */
+    protected function getStub()
+    {
+        return __DIR__ . '/stubs/controller.resourceful.stub';
+    }
+
     /**
      * Replace the class name for the given stub.
      *
@@ -39,21 +70,14 @@ class Controller extends ControllerMakeCommand
     }
 
     /**
-     * Get the stub file for the generator.
+     * Get the default namespace for the class.
      *
+     * @param  string  $rootNamespace
      * @return string
      */
-    protected function getStub()
+    protected function getDefaultNamespace($rootNamespace)
     {
-        if ($this->option('resource')) {
-            return __DIR__ . '/stubs/controller.stub';
-        }
-
-        if ($this->option('resourceful')) {
-            return __DIR__ . '/stubs/controller.resourceful.stub';
-        }
-
-        return __DIR__ . '/stubs/controller.plain.stub';
+        return $rootNamespace . '\Http\Controllers';
     }
 
     /**
@@ -67,5 +91,20 @@ class Controller extends ControllerMakeCommand
             ['crud', 'c', InputOption::VALUE_NONE, 'Generate a CRUD controller class.'],
             ['resource', 'r', InputOption::VALUE_NONE, 'Generate a resource controller class.'],
         ];
+    }
+
+    /**
+     * Build the class with the given name.
+     *
+     * Remove the base controller import if we are already in base namespace.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    protected function buildClass($name)
+    {
+        $namespace = $this->getNamespace($name);
+
+        return str_replace("use {$namespace}\Controller;\n", '', parent::buildClass($name));
     }
 }
