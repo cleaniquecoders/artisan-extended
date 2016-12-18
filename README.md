@@ -10,6 +10,14 @@ composer require cleaniquecoders/artisan-extended
 
 Open up `config/app.php` and register `CleaniqueCoders\ArtisanExtended\ArtisanExtendedServiceProvider::class,` in `providers` key.
 
+## Publishing Reusable Components
+
+Run following command to publish reusable components:
+
+```
+php artisan vendor:publish --tag=artisan-extended-view-components
+```
+
 ## Important Notes
 
 On production, only `php artisan clear:cache` available for use, other than that if your application running on `local` or `staging`, all the Artisan Extended commands available for you on artisan console.
