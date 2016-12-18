@@ -33,10 +33,15 @@ class ArtisanExtendedServiceProvider extends ServiceProvider
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Common::class;
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\EventListener::class;
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Route::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\View::class,
             }
 
             $this->commands($commands);
         }
+
+        $this->publishes([
+            dirname(__FILE__) . '/resources/views/components' => resource_path('views/components'),
+        ], 'artisan-extended-view-components');
     }
 
     /**

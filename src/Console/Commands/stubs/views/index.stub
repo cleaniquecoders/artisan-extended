@@ -1,0 +1,24 @@
+@extends('layouts.app')
+
+@section('content')
+	<div class="container">
+		@include('components.list', [
+			'route' => 'DummyRoute',
+			'resources' => $DummyResource,
+			'headings' => [
+				[
+					'label' => 'ID',
+					'attr' => 'id',
+				],
+				[
+					'label' => 'Created On',
+					'attr' => 'created_at',
+				],
+				[
+					'label' => 'Last Updated On',
+					'attr' => 'updated_at',
+				],
+			]
+		])	
+	</div>	
+@endsection
