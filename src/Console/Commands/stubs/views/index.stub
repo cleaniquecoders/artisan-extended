@@ -4,7 +4,7 @@
 	<div class="container">
 		@include('components.list', [
 			'route' => 'DummyRoute',
-			'resources' => $DummyResource,
+			'resources' => $resources,
 			'headings' => [
 				[
 					'label' => 'ID',

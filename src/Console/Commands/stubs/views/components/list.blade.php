@@ -1,5 +1,10 @@
 <div class="container">
-	<a href="{{ route($route.'.create') }}" class="btn btn-success pull-right">New Record</a>
+	<a href="{{ route($route.'.create') }}"
+		class="btn btn-success pull-right"
+		data-toggle="tooltip" data-placement="top"
+        title="New Record">
+		New Record
+	</a>
 	{{ $resources->links() }}
 	<div class="table-responsive">
 	<table class="table table-condensed table-hover">

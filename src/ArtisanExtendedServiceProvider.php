@@ -34,6 +34,7 @@ class ArtisanExtendedServiceProvider extends ServiceProvider
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\EventListener::class;
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Route::class;
                 $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\View::class;
+                $commands[] = \CleaniqueCoders\ArtisanExtended\Console\Commands\Controller::class;
             }
 
             $this->commands($commands);
