@@ -31,7 +31,7 @@ class Scaffold extends Command
         $models = $this->arguments('model')['model'];
         $routes = [];
         foreach ($models as $key => $value) {
-            $value = Str::singular(Str::studyly($value));
+            $value = Str::singular(Str::studly($value));
 
             // Create a new model with migration script
             $this->call('make:model',
