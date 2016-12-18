@@ -64,7 +64,7 @@ class Controller extends ControllerMakeCommand
     protected function getOptions()
     {
         return [
-            ['resourceful', 'f', InputOption::VALUE_NONE, 'Generate a resourceful controller class.'],
+            ['crud', 'c', InputOption::VALUE_NONE, 'Generate a CRUD controller class.'],
             ['resource', 'r', InputOption::VALUE_NONE, 'Generate a resource controller class.'],
         ];
     }
