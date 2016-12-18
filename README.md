@@ -24,6 +24,22 @@ On production, only `php artisan clear:cache` available for use, other than that
 
 ## Available Commands
 
+### Create a New Scaffold
+
+You may create single or multiple Model at one time.
+
+```
+php artisan make:scaffold Post
+```
+
+OR 
+
+```
+php artisan make:scaffold Post Like Video Photo Reaction
+```
+
+Please take note that, for now you still need to update the model `$fillable` property, `ModelFactory.php` and model's migration scripts.
+
 ### Clear All Caches
 
 ```
@@ -53,6 +69,7 @@ Options available:
 1. `-a` - Create a new route for API
 2. `-p` - Set prefix for the route
 3. `-m` - Set middleware for the route. Each middleware separated by comma(,)
+4. `-r` - Create a new resourceful controller
 
 #### Create an API Route
 
