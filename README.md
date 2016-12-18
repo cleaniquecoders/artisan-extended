@@ -18,6 +18,8 @@ Run following command to publish reusable components:
 php artisan vendor:publish --tag=artisan-extended-views
 ```
 
+p/s: Scaffold / Resourceful views require reusable components, hence you need to publish the `artisan-extended-views`.
+
 ## Important Notes
 
 On production, only `php artisan clear:cache` available for use, other than that if your application running on `local` or `staging`, all the Artisan Extended commands available for you on artisan console.
@@ -38,7 +40,7 @@ OR
 php artisan make:scaffold Post Like Video Photo Reaction
 ```
 
-Please take note that, for now you still need to update the model `$fillable` property, `ModelFactory.php` and model's migration scripts.
+p/s: Please take note that, for now you still need to update the model `$fillable` property, `ModelFactory.php` and model's migration scripts.
 
 ### Clear All Caches
 
@@ -89,24 +91,38 @@ php artisan make:route -a -p v1 Post
 php artisan make:route -a -p v1 -m auth:auth,jwt Post
 ```
 
+### Create a new View
+
+Generate a view extending default layout, `app`.
+
+```
+php artisan make:view welcome
+```
+
+Generate a new `admin`'s `dashboard` with layouts of `admin`.
+
+```
+php artisan make:view admin.dashboard -p admin
+```
+
+Generate a resourceful view, by passing a `-r` option and ommit the specific blade files.
+
+```
+php artisan make:view users -r
+```
+
+This command will create a directory named `users` in `resources/views`. There will be: 
+
+1. `index.blade.php`, 
+2. `show.blade.php` and 
+3. `form.blade.php`. 
+
+You may want to create a resourceful controller by running `php artisan make:resourceful UserController`.
+
 ### Create Event & Listener
 
 ```
 php artisan make:eventlistener Post
-```
-
-### Create a new Model, Migration, Resourceful Controller, Route, Request, Seeder, Event & Listener
-
-You may create single or multiple Model at one time.
-
-```
-php artisan make:common Post
-```
-
-OR 
-
-```
-php artisan make:common Post Like Video Photo Reaction
 ```
 
 ### Secure your Cookies
