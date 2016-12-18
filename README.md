@@ -10,12 +10,12 @@ composer require cleaniquecoders/artisan-extended
 
 Open up `config/app.php` and register `CleaniqueCoders\ArtisanExtended\ArtisanExtendedServiceProvider::class,` in `providers` key.
 
-## Publishing Reusable Components
+## Publishing Reusable Components and Layouts
 
 Run following command to publish reusable components:
 
 ```
-php artisan vendor:publish --tag=artisan-extended-view-components
+php artisan vendor:publish --tag=artisan-extended-views
 ```
 
 ## Important Notes

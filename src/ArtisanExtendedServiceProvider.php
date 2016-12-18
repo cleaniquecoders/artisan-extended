@@ -41,8 +41,8 @@ class ArtisanExtendedServiceProvider extends ServiceProvider
         }
 
         $this->publishes([
-            dirname(__FILE__) . '/resources/views/components' => resource_path('views/components'),
-        ], 'artisan-extended-view-components');
+            dirname(__FILE__) . '/resources/views' => resource_path('views'),
+        ], 'artisan-extended-views');
     }
 
     /**

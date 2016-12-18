@@ -24,8 +24,6 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ route('static.aboutUs') }}">About Us</a></li>
-                <li><a href="{{ route('static.contactUs') }}">Contact Us</a></li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
@@ -37,8 +35,6 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('users.index') }}">Users Manager</a></li>
-                            <li><a href="{{ route('posts.index') }}">Posts Manager</a></li>
                             <li>
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
