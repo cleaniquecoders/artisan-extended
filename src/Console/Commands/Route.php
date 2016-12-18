@@ -53,13 +53,16 @@ class Route extends GeneratorCommand
         $path = $this->getNamespace($name) . '\\' . str_replace($this->getNamespace($name) . '\\', '', $name);
 
         // if controller does not exist
-        if (!$this->files->exists($this->getPath($this->getControllerName($name) . '.php'))) {
-            $this->call('make:controller',
-                [
-                    'name' => $this->getNameInput() . 'Controller',
-                    '-r' => true,
-                ]
-            );
+        if ($this->option('r')) {
+            if (!$this->files->exists($this->getPath($this->getControllerName($name) . '.php'))) {
+                $this->call('make:controller',
+                    [
+                        'name' => $this->getNameInput() . 'Controller',
+                        '-r' => true,
+                        '-f' => true,
+                    ]
+                );
+            }
         }
 
         $content = '\\' . $path . '::routes();' . PHP_EOL;
@@ -171,6 +174,7 @@ class Route extends GeneratorCommand
             ['a', 'a', InputOption::VALUE_NONE, 'Create a new API route.'],
             ['p', 'p', InputOption::VALUE_OPTIONAL, 'Set prefix for the given route.'],
             ['m', 'm', InputOption::VALUE_OPTIONAL, 'Set middlewares for the given route.'],
+            ['r', 'r', InputOption::VALUE_NONE, 'Create a new resourceful controller.'],
         ];
     }
 }
