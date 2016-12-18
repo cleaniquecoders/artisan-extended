@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "feddd765bdce37452afde8497c479400",
-    "content-hash": "846be2f8ce572801ec7d77936bcf4428",
+    "hash": "4159f8ca16fa93fd2a3f44a509f31b64",
+    "content-hash": "b77a679d75ef381dcb40fd5eff799209",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -80,12 +80,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "96a861ab8b13703fbeb3478718b50e77e0e429b6"
+                "reference": "8d5ef353fb523f579fb23a628c665443be7939c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/96a861ab8b13703fbeb3478718b50e77e0e429b6",
-                "reference": "96a861ab8b13703fbeb3478718b50e77e0e429b6",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/8d5ef353fb523f579fb23a628c665443be7939c8",
+                "reference": "8d5ef353fb523f579fb23a628c665443be7939c8",
                 "shasum": ""
             },
             "require": {
@@ -123,7 +123,7 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "https://laravel.com",
-            "time": "2016-11-14 18:53:23"
+            "time": "2016-12-14 15:26:42"
         },
         {
             "name": "illuminate/contracts",
@@ -173,12 +173,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "2c12d89aae57bcaff39c8d1836e3b9916ca9c16c"
+                "reference": "2516b69c945342fbeec7e7814ae9fd71bd7d89ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/2c12d89aae57bcaff39c8d1836e3b9916ca9c16c",
-                "reference": "2c12d89aae57bcaff39c8d1836e3b9916ca9c16c",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/2516b69c945342fbeec7e7814ae9fd71bd7d89ac",
+                "reference": "2516b69c945342fbeec7e7814ae9fd71bd7d89ac",
                 "shasum": ""
             },
             "require": {
@@ -222,7 +222,50 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2016-12-05 15:05:59"
+            "time": "2016-12-15 18:02:00"
+        },
+        {
+            "name": "laracasts/flash",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "03eec812fd6ae948664ff51b4320785f6d15ee5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/03eec812fd6ae948664ff51b4320785f6d15ee5d",
+                "reference": "03eec812fd6ae948664ff51b4320785f6d15ee5d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2016-07-11 20:46:02"
         },
         {
             "name": "nesbot/carbon",
@@ -230,12 +273,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7a026991092624a245d300685ce09ff5b4d110e0"
+                "reference": "0f87ca78d68298615068b08ce6c1b72c6ed86a49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7a026991092624a245d300685ce09ff5b4d110e0",
-                "reference": "7a026991092624a245d300685ce09ff5b4d110e0",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/0f87ca78d68298615068b08ce6c1b72c6ed86a49",
+                "reference": "0f87ca78d68298615068b08ce6c1b72c6ed86a49",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +287,8 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "~1.11",
-                "phpunit/phpunit": "~4.0|~5.0"
+                "phpunit/phpunit": "~4.0|~5.0",
+                "sllh/php-cs-fixer-styleci-bridge": "^2.1"
             },
             "type": "library",
             "extra": {
@@ -275,7 +319,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2016-07-22 14:20:35"
+            "time": "2016-12-02 15:58:32"
         },
         {
             "name": "paragonie/random_compat",
@@ -378,12 +422,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "5be36e1f3ac7ecbe7e34fb641480ad8497b83aa6"
+                "reference": "b78555ab451f29228298b0170038c6116e1c9d2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/5be36e1f3ac7ecbe7e34fb641480ad8497b83aa6",
-                "reference": "5be36e1f3ac7ecbe7e34fb641480ad8497b83aa6",
+                "url": "https://api.github.com/repos/symfony/console/zipball/b78555ab451f29228298b0170038c6116e1c9d2c",
+                "reference": "b78555ab451f29228298b0170038c6116e1c9d2c",
                 "shasum": ""
             },
             "require": {
@@ -431,7 +475,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-16 22:17:09"
+            "time": "2016-12-17 10:46:00"
         },
         {
             "name": "symfony/debug",
@@ -439,12 +483,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "342af93b6be3aedfc922c7cf07e4e5d0bc96c6a7"
+                "reference": "e45647910b4b6fcb48d8cfe33e1793dd2d56306f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/342af93b6be3aedfc922c7cf07e4e5d0bc96c6a7",
-                "reference": "342af93b6be3aedfc922c7cf07e4e5d0bc96c6a7",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/e45647910b4b6fcb48d8cfe33e1793dd2d56306f",
+                "reference": "e45647910b4b6fcb48d8cfe33e1793dd2d56306f",
                 "shasum": ""
             },
             "require": {
@@ -488,7 +532,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-19 20:35:20"
+            "time": "2016-12-16 16:05:39"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -555,12 +599,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "f2f617be8e360e716a9e7f93f837e04f9f68c410"
+                "reference": "b2f5479424848393a3c04389a765259e7a2bfef6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/f2f617be8e360e716a9e7f93f837e04f9f68c410",
-                "reference": "f2f617be8e360e716a9e7f93f837e04f9f68c410",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/b2f5479424848393a3c04389a765259e7a2bfef6",
+                "reference": "b2f5479424848393a3c04389a765259e7a2bfef6",
                 "shasum": ""
             },
             "require": {
@@ -611,7 +655,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-19 20:35:20"
+            "time": "2016-12-08 15:31:48"
         }
     ],
     "packages-dev": [],
