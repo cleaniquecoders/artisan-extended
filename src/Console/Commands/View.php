@@ -39,7 +39,6 @@ class View extends GeneratorCommand
         $name = $this->getNameInput();
         $path = $this->getPath($name);
         $file = $path . '/' . $name . '.blade.php';
-
         if (!$this->option('r')) {
             if ($this->alreadyExists($file)) {
                 $this->error($this->type . ' already exists!');
@@ -86,8 +85,12 @@ class View extends GeneratorCommand
      */
     protected function getNameInput()
     {
-        $explode = explode('.', trim($this->argument('name')));
-        $name = $explode[count($explode) - 1];
+        if ($this->option('r')) {
+            $name = trim($this->argument('name'));
+        } else {
+            $explode = explode('.', trim($this->argument('name')));
+            $name = $explode[count($explode) - 1];
+        }
         return Str::slug($name);
     }
 
@@ -111,6 +114,9 @@ class View extends GeneratorCommand
     protected function getPath($name)
     {
         $path = str_replace(['.', $name], ['', ''], $this->argument('name'));
+        if ($this->option('r')) {
+            $path .= $name;
+        }
         return resource_path('views/' . $path);
     }
 
