@@ -45,7 +45,9 @@ class View extends GeneratorCommand
                 $this->error($this->type . ' already exists!');
                 return false;
             } else {
-                $this->files->makeDirectory($path);
+                if (!$this->alreadyExists($path)) {
+                    $this->files->makeDirectory($path);
+                }
             }
             $this->files->put($file, $this->buildClass($name));
         } else {
