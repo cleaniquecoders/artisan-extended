@@ -4,7 +4,7 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			@include('components.forms.text', ['type' => 'text', 'name' => 'Name', 'value' => null])
-			@include('components.forms.submit')
+			@include('components.forms.submit',['route' => 'DummyRoute'])
 		</div>
 	</div>
 @endsection
