@@ -13,7 +13,7 @@
 	<div class="container">
 		@include('components.forms.base', ['options' => [
 			'method' => $type,
-			'action' => route('DummyRoute.' . ($type == 'POST' ? 'store' : 'update')),
+			'url' => route('DummyRoute.' . ($type == 'POST' ? 'store' : 'update')),
 		]])
 	</div>
 @endsection
