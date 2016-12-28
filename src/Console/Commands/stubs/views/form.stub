@@ -1,19 +1,24 @@
 @extends('layouts.app')
 
 @section('form-components')
-	<div class="panel panel-default">
-		<div class="panel-body">
-			@include('components.forms.text', ['type' => 'text', 'name' => 'Name', 'value' => null])
-			@include('components.forms.submit',['route' => 'DummyRoute'])
-		</div>
-	</div>
+	@include('components.forms.input', ['type' => 'text', 'name' => 'Name', 'value' => null])
+	@include('components.forms.submit',['route' => 'DummyRoute'])
 @endsection
 
 @section('content')
 	<div class="container">
-		@include('components.forms.base', ['options' => [
-			'method' => $type,
-			'url' => route('DummyRoute.' . ($type == 'POST' ? 'store' : 'update')),
-		]])
+		@if($type == 'POST')
+			@include('components.forms.base', ['options' => [
+				'method' => 'POST',
+				'route' => 'DummyRoute.store',
+				'_method' => 'POST'
+			]])
+		@elseif($type == 'PUT')
+			@include('components.forms.base', ['options' => [
+				'method' => 'POST',
+				'_method' => 'PUT',
+				'route' => ['DummyRoute.update', $resource->id ]
+			]])
+		@endif
 	</div>
 @endsection

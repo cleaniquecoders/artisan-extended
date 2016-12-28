@@ -1,18 +1,24 @@
 <div class="btn-group">
+
+    @permission($route.'-read')
 	<a href="{{ route($route.'.show', ['id' => $resource->id]) }}"
         class="btn btn-default"
         data-toggle="tooltip" data-placement="top"
         title="Details">
         Details
     </a>
+    @endpermission
 
+    @permission($route.'-edit')
 	<a href="{{ route($route.'.edit', ['id' => $resource->id]) }}"
         class="btn btn-primary"
         data-toggle="tooltip" data-placement="top"
         title="Edit">
         Edit
     </a>
+    @endpermission
 
+    @permission($route.'-delete')
     <a href="{{ route($route.'.destroy', ['id' => $resource->id]) }}"
     	class="btn btn-danger"
         data-toggle="tooltip" data-placement="top"
@@ -28,5 +34,6 @@
         {{ csrf_field() }}
         {{ method_field('DELETE') }}
     </form>
+    @endpermission
 
 </div>

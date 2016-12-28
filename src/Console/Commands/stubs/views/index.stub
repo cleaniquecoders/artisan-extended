@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container">
 		@include('components.list', [
 			'route' => 'DummyRoute',
 			'resources' => $resources,
+			'appends' => [],
 			'headings' => [
 				[
 					'label' => 'ID',
@@ -20,5 +20,4 @@
 				],
 			]
 		])	
-	</div>	
 @endsection
