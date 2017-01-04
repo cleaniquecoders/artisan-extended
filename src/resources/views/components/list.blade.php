@@ -1,15 +1,18 @@
 <div class="container">
 		<div class="panel panel-default">
 		    <div class="panel-heading">
-		      <h4><span class="glyphicon glyphicon-list"></span>&nbsp;{{ title_case(str_singular($route)) }} List</h4>
+		      <h4><span class="glyphicon glyphicon-list"></span>&nbsp;{{ title_case(str_singular($route)) }} List
+				<div class="pull-right">
+					<a href="{{ route($route . '.create') }}"
+						class="btn btn-success pull-right"
+						data-toggle="tooltip" data-placement="top"
+				        title="New Record">
+						<span class="glyphicon glyphicon-plus"></span>
+					</a>
+				</div>
+		      </h4>
 		    </div>
 		    <div class="panel-body">
-				<a href="{{ route($route . '.create') }}"
-					class="btn btn-success pull-right"
-					data-toggle="tooltip" data-placement="top"
-			        title="New Record">
-					New Record
-				</a>
 
 				@if($appends)
 					{{ $resources->appends($appends)->links() }}
